@@ -28,8 +28,40 @@ try {
 ## Example Usage
 
 ### JSON Request
+<pre>
+$email = 'hoge@email.com';
+$name  = 'your name';
+
+$values = array(
+	'EmailAddress' => $email,
+	'Name'         => $name,
+	'Resubscribe'  => 'true'
+);
+$campaignMonitor = new Convexstyle_Service_CampaignMonitor_Subscribe('Your Campaign Monitor API Key', 'Your Compaign Monitor List ID', <b>Convexstyle_Service_CampaignMonitor_Subscribe::JSON</b>);
+try {
+	$campaignMonitor->addSubscriber($values);
+} catch(Exception $e) {
+	// Deal with errors 
+}
+</pre>
 
 ### XML Request
+<pre>
+$email = 'hoge@email.com';
+$name  = 'your name';
+
+$values = array(
+	'EmailAddress' => $email,
+	'Name'         => $name,
+	'Resubscribe'  => 'true'
+);
+$campaignMonitor = new Convexstyle_Service_CampaignMonitor_Subscribe('Your Campaign Monitor API Key', 'Your Compaign Monitor List ID', <b>Convexstyle_Service_CampaignMonitor_Subscribe::XML</b>);
+try {
+	$campaignMonitor->addSubscriber($values);
+} catch(Exception $e) {
+	// Deal with errors 
+}
+</pre>
 
 ### JSON Request with some custom fields
 <pre>
@@ -39,10 +71,10 @@ $name  = 'your name';
 $values = array(
 	'EmailAddress' => $email,
 	'Name'         => $name,
-	'CustomFields' => array(
+	<b>'CustomFields' => array(
 		array('Key' => 'website', 'Value' => 'http://www.hoge.com'),	
 		array('Key' => 'interests', 'Value' => 'snowboard')	
-	),
+	),</b>
 	'Resubscribe'  => 'true'
 );
 $campaignMonitor = new Convexstyle_Service_CampaignMonitor_Subscribe('Your Campaign Monitor API Key', 'Your Compaign Monitor List ID', Convexstyle_Service_CampaignMonitor_Subscribe::JSON);
