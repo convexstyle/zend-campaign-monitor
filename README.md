@@ -11,7 +11,7 @@ $values = array(
 	'Name'         => $name,
 	'Resubscribe'  => 'true'
 );
-$campaignMonitor = new Convexstyle_Service_CampaignMonitor_Subscribe('Your Campaign Monitor API Key', 'Your Compaign Monitor List ID', Convexstyle_Service_CampaignMonitor_Subscribe::JSON);
+$campaignMonitor = new Convexstyle_Service_CampaignMonitor_Subscribe('API Key', 'List ID', Convexstyle_Service_CampaignMonitor_Subscribe::JSON);
 try {
 	$campaignMonitor->addSubscriber($values);
 } catch(Exception $e) {
@@ -37,7 +37,7 @@ $values = array(
 	'Name'         => $name,
 	'Resubscribe'  => 'true'
 );
-$campaignMonitor = new Convexstyle_Service_CampaignMonitor_Subscribe('Your Campaign Monitor API Key', 'Your Compaign Monitor List ID', <b>Convexstyle_Service_CampaignMonitor_Subscribe::JSON</b>);
+$campaignMonitor = new Convexstyle_Service_CampaignMonitor_Subscribe('API Key', 'List ID', <b>Convexstyle_Service_CampaignMonitor_Subscribe::JSON</b>);
 try {
 	$campaignMonitor->addSubscriber($values);
 } catch(Exception $e) {
@@ -55,7 +55,7 @@ $values = array(
 	'Name'         => $name,
 	'Resubscribe'  => 'true'
 );
-$campaignMonitor = new Convexstyle_Service_CampaignMonitor_Subscribe('Your Campaign Monitor API Key', 'Your Compaign Monitor List ID', <b>Convexstyle_Service_CampaignMonitor_Subscribe::XML</b>);
+$campaignMonitor = new Convexstyle_Service_CampaignMonitor_Subscribe('API Key', 'List ID', <b>Convexstyle_Service_CampaignMonitor_Subscribe::XML</b>);
 try {
 	$campaignMonitor->addSubscriber($values);
 } catch(Exception $e) {
@@ -77,7 +77,7 @@ $values = array(
 	),</b>
 	'Resubscribe'  => 'true'
 );
-$campaignMonitor = new Convexstyle_Service_CampaignMonitor_Subscribe('Your Campaign Monitor API Key', 'Your Compaign Monitor List ID', Convexstyle_Service_CampaignMonitor_Subscribe::JSON);
+$campaignMonitor = new Convexstyle_Service_CampaignMonitor_Subscribe('API Key', 'List ID', Convexstyle_Service_CampaignMonitor_Subscribe::JSON);
 try {
 	$campaignMonitor->addSubscriber($values);
 } catch(Exception $e) {
