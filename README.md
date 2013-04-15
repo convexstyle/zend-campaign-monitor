@@ -22,6 +22,7 @@ try {
 ## How to get started
 <ul>
 <li><a href="http://framework.zend.com/downloads/latest" target="_blank">Download Zend Framework Library</a>. (Please be aware that this libary is compatible with Zend Framework 1.+.)</li>
+<li>Read <a href="http://www.campaignmonitor.com/api/getting-started/" target="_blank">Campaign Monitor Get Started Documentation</a>.</li>
 </ul>
 
 
