@@ -41,7 +41,7 @@ $values = array(
 	'Name'         => $name,
 	'CustomFields' => array(
 		array('Key' => 'website', 'Value' => 'http://www.hoge.com'),	
-		array('Key' => 'interests', 'Value' => 'snowboard'),	
+		array('Key' => 'interests', 'Value' => 'snowboard')	
 	),
 	'Resubscribe'  => 'true'
 );
