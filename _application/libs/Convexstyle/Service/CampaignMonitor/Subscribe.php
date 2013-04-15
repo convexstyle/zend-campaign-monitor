@@ -82,7 +82,7 @@ class Convexstyle_Service_CampaignMonitor_Subscribe
 		$response = $httpClient->request(Zend_Http_Client::POST);
 
 		if($response->isError()) {
-			throw new Exception($response->getMessage());
+			throw new Convexstyle_Service_Exception($response->getMessage(), $response->getStatus(), $this->_type, $response->getBody());
 		}
 		
 		// Return the Convexstyle_Service_CampaignMonitor3_Result object.
@@ -121,7 +121,7 @@ class Convexstyle_Service_CampaignMonitor_Subscribe
 		$response = $httpClient->request(Zend_Http_Client::POST);
 		
 		if($response->isError()) {
-			throw new Exception($response->getMessage());
+			throw new Convexstyle_Service_Exception($response->getMessage(), $response->getStatus(), $this->_type, $response->getBody());
 		}
 		
 		// Return the Convexstyle_Service_CampaignMonitor3_Result object.
