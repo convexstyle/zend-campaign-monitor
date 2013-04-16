@@ -86,7 +86,7 @@ try {
 }
 </pre>
 
-### Check the success and error status
+### Validate the success and error status
 <pre>
 $email = 'hoge@email.com';
 $name  = 'your name';
@@ -98,8 +98,15 @@ $values = array(
 );
 $campaignMonitor = new Convexstyle_Service_CampaignMonitor_Subscribe('API Key', 'List ID', Convexstyle_Service_CampaignMonitor_Subscribe::XML);
 try {
-    $subscribe = $campaignMonitor->addSubscriber($values);
-    <b>if($subscribe->result() == $values['EmailAddress']) {
+    // Create a new contact
+    <b>/*
+    if($subscribe->status() == 200  && $subscribe->result() == $values['EmailAddress']) {
+    	echo 'success';	
+    }
+    */
+    
+    // Resubscribe a contact
+    if($subscribe->status() == 201  && $subscribe->result() == $values['EmailAddress']) {
     	echo 'success';	
     }</b>
 } catch(Exception $e) {
