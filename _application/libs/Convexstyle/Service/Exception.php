@@ -6,7 +6,7 @@ require_once('Zend/Exception.php');
 
 class Convexstyle_Service_Exception extends Zend_Exception
 {
-	public function __construct($message, $code, $type, $body, Exception $previous = null)
+	public function __construct($message, $code, $type = null, $body = null, Exception $previous = null)
 	{
 		parent::__construct($message, $code, $previous);
 		$this->_type = $type;

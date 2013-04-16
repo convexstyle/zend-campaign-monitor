@@ -39,18 +39,14 @@ $autoLoader = Zend_Loader_Autoloader::getInstance();
 $autoLoader->setFallbackAutoloader(true)->pushAutoloader(NULL, 'Smarty_');
 
 
-$email = 'hoge@email.com';
-$name  = 'your name';
-
-$values = array(
-    'EmailAddress' => $email,
-    'Name'         => $name,
-    'Resubscribe'  => 'true'
+// Unsubscrible
+$value = array(
+    'EmailAddress' => 'hoge@email.com'
 );
-$campaignMonitor = new Convexstyle_Service_CampaignMonitor_Subscribe('API Key', 'List ID', Convexstyle_Service_CampaignMonitor_Subscribe::XML);
+$campaignMonitor = new Convexstyle_Service_CampaignMonitor_Subscribe('Your API Key', 'Your List ID', Convexstyle_Service_CampaignMonitor_Subscribe::XML);
 try {
-    $subscribe = $campaignMonitor->addSubscriber($values);
-    if($subscribe->result() == $values['EmailAddress']) {
+    $subscribe = $campaignMonitor->unsubscribe($value);
+    if($subscribe->status() == 200) {
     	echo 'success';	
     }
 } catch(Exception $e) {

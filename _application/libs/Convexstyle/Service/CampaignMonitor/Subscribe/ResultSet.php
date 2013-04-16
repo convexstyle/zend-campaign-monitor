@@ -15,8 +15,10 @@ class Convexstyle_Service_CampaignMonitor_Subscribe_ResultSet
 {
 
 	
-	public function __construct($data, $type)
+	public function __construct($status, $data, $type)
 	{
+		$this->_status = $status;
+		
 		switch($type) {
 			case Convexstyle_Service_CampaignMonitor_Subscribe::XML:
 				$this->_result = simplexml_load_string($data);
@@ -27,6 +29,12 @@ class Convexstyle_Service_CampaignMonitor_Subscribe_ResultSet
 			default:
 				break;
 		}
+	}
+	
+	
+	public function status()
+	{
+		return $this->_status;
 	}
 	
 	
@@ -42,6 +50,7 @@ class Convexstyle_Service_CampaignMonitor_Subscribe_ResultSet
 	}
 
 	
+	private $_status;
 	private $_result;
 	
 	

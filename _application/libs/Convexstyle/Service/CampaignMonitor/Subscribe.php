@@ -86,7 +86,7 @@ class Convexstyle_Service_CampaignMonitor_Subscribe
 		}
 		
 		// Return the Convexstyle_Service_CampaignMonitor3_Result object.
-		return new Convexstyle_Service_CampaignMonitor_Subscribe_ResultSet($response->getBody(), $this->_type);
+		return new Convexstyle_Service_CampaignMonitor_Subscribe_ResultSet($response->getStatus(), $response->getBody(), $this->_type);
 	}
 	
 	
@@ -101,7 +101,7 @@ class Convexstyle_Service_CampaignMonitor_Subscribe
 	public function unsubscribe($value)
 	{
 		if(!array_key_exists('EmailAddress', $value)) {
-			throw new Exception('Key: EmailAddress is not provided in the array.');
+			throw new Convexstyle_Service_Exception('Key: EmailAddress is not provided in the array.');
 		}
 		
 		// Prepare the post data
@@ -125,7 +125,7 @@ class Convexstyle_Service_CampaignMonitor_Subscribe
 		}
 		
 		// Return the Convexstyle_Service_CampaignMonitor3_Result object.
-		return new Convexstyle_Service_CampaignMonitor_Subscribe_ResultSet($response->getBody(), $this->_type);
+		return new Convexstyle_Service_CampaignMonitor_Subscribe_ResultSet($response->getStatus(), $response->getBody(), $this->_type);
 	}
 	
 	
@@ -178,7 +178,7 @@ class Convexstyle_Service_CampaignMonitor_Subscribe
 			case self::XML: {
 				$dom               = new DOMDocument(self::XML_VERSION, self::XML_ENCODING);
 				$dom->formatOutput = true;
-				$subscriberDom = $dom->createElement('subscriber');
+				$subscriberDom = $dom->createElement('Subscriber');
 				$subscriberDom->appendChild($dom->createElement('EmailAddress', $value['EmailAddress']));
 				$dom->appendChild($subscriberDom);
 				$tmp = $dom->saveXML();
