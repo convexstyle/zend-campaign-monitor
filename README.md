@@ -115,3 +115,36 @@ try {
 }
 </pre>
 
+### Unsubscribe with JSON Request
+<pre>
+$value = array(
+    'EmailAddress' => 'hoge@email.com'
+);
+$campaignMonitor = new Convexstyle_Service_CampaignMonitor_Subscribe('Your API Key', 'Your List ID', <b>Convexstyle_Service_CampaignMonitor_Subscribe::JSON</b>);
+try {
+    $subscribe = $campaignMonitor->unsubscribe($value);
+    if($subscribe->status() == 200) {
+    	echo 'success';	
+    }
+} catch(Exception $e) {
+    // Deal with errors 
+    Zend_Debug::dump($e->getBody());
+}
+</pre>
+
+### Unsubscribe with XML Request
+<pre>
+$value = array(
+    'EmailAddress' => 'hoge@email.com'
+);
+$campaignMonitor = new Convexstyle_Service_CampaignMonitor_Subscribe('Your API Key', 'Your List ID', <b>Convexstyle_Service_CampaignMonitor_Subscribe::XML</b>);
+try {
+    $subscribe = $campaignMonitor->unsubscribe($value);
+    if($subscribe->status() == 200) {
+    	echo 'success';	
+    }
+} catch(Exception $e) {
+    // Deal with errors 
+    Zend_Debug::dump($e->getBody());
+}
+</pre>
