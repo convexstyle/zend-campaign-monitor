@@ -64,7 +64,7 @@ try {
 }
 </pre>
 
-### JSON Request with some custom fields
+### JSON Request with custom fields
 <pre>
 $email = 'hoge@email.com';
 $name  = 'your name';
@@ -85,3 +85,26 @@ try {
 	// Deal with errors 
 }
 </pre>
+
+### Check the success and error status
+<pre>
+$email = 'hoge@email.com';
+$name  = 'your name';
+
+$values = array(
+    'EmailAddress' => $email,
+    'Name'         => $name,
+    'Resubscribe'  => 'true'
+);
+$campaignMonitor = new Convexstyle_Service_CampaignMonitor_Subscribe('API Key', 'List ID', Convexstyle_Service_CampaignMonitor_Subscribe::XML);
+try {
+    $subscribe = $campaignMonitor->addSubscriber($values);
+    <b>if($subscribe->result() == $values['EmailAddress']) {
+    	echo 'success';	
+    }</b>
+} catch(Exception $e) {
+    // Deal with errors 
+    <b>Zend_Debug::dump($e->getBody());</b>
+}
+</pre>
+
